@@ -2,40 +2,44 @@
 \usepackage[utf8]{inputenc}
 \usepackage{tabularx}
 \usepackage{enumitem}
-\usepackage[margin=1.5cm]{geometry}
+\usepackage[margin=1.2cm]{geometry}
+\usepackage{setspace}
 \renewcommand{\familydefault}{\sfdefault}
 
 \newcommand{\lohko}{
 	\begin{tabularx}{\textwidth}{
 		|c
 		|X
-		|>{\centering}p{1.4cm}
-		|>{\centering}p{1.4cm}
-		|>{\centering}p{1.4cm}
-		|>{\centering}p{1.4cm}
-		|>{\centering}p{1.4cm}
-		|>{\centering}p{1.4cm}
-		|>{\centering}p{1.4cm}
+		|>{\centering}p{1.3cm}
+		|>{\centering}p{1.3cm}
+		|>{\centering}p{1.3cm}
+		|>{\centering}p{1.3cm}
+		|>{\centering}p{1.3cm}
+		|>{\centering}p{1.3cm}
+		|>{\centering}p{1.3cm}
+		|>{\centering}p{1.3cm}
 		|c
 		|
 	}
 		\hline
-		& \bf Joukkue & \bf 1 & \bf 2 & \bf 3 & \bf 4 & \bf 5 & \bf yht. & \bf kesk. & \bf sij. \\
+		& \bf Joukkue & \bf 1 & \bf 2 & \bf 3 & \bf 4 & \bf 5 & \bf 6 & \bf yht. & \bf kesk. & \bf sij. \\
 		\hline
-		1 & & --- & / & / & / & / & / & / & \\
+		1 & & --- & / & / & / & / & / & / & / & \\
 		\hline
-		2 & & / & --- & / & / & / & / & / & \\
+		2 & & / & --- & / & / & / & / & / & / & \\
 		\hline
-		3 & & / & / & --- & / & / & / & / & \\
+		3 & & / & / & --- & / & / & / & / & / & \\
 		\hline
-		4 & & / & / & / & --- & / & / & / & \\
+		4 & & / & / & / & --- & / & / & / & / & \\
 		\hline
-		5 & & / & / & / & / &  --- & / & / & \\
+		5 & & / & / & / & / & --- & / & / & / & \\
+		\hline
+		6 & & / & / & / & / & / & --- & / & / & \\
 		\hline
 	\end{tabularx}
 }
 
-\newcommand{\kaavio}[4]{
+\newcommand{\kaavioA}[4]{
 	\begin{tabularx}{\textwidth}{l X X X}
 		#1 & & & \\
 		\cline{2-2}
@@ -54,47 +58,100 @@
 	\end{tabularx}
 }
 
+\newcommand{\kaavioB}[8]{
+	\begin{tabularx}{\textwidth}{l X X X X}
+		#1 & & & &\\
+		\cline{2-2}
+		& \multicolumn{1}{c|}{} \\
+		\cline{3-3}
+		#2 & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+		\cline{2-2}
+		 & & \multicolumn{1}{c|}{} & \\
+		\cline{4-4}
+		#3 & & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+		\cline{2-2}
+		 & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+		\cline{3-3}
+		#4 & \multicolumn{1}{c|}{} & & \multicolumn{1}{c|}{} \\
+		\cline{2-2}
+		 & & & \multicolumn{1}{c|}{}\\
+		\cline{5-5}
+		#5 & & & \multicolumn{1}{c|}{}\\
+		\cline{2-2}
+		& \multicolumn{1}{c|}{} & & \multicolumn{1}{c|}{} \\
+		\cline{3-3}
+		#6 & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+		\cline{2-2}
+		 & & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+		\cline{4-4}
+		#7 & & \multicolumn{1}{c|}{} \\
+		\cline{2-2}
+		 & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+		\cline{3-3}
+		#8 & \multicolumn{1}{c|}{} \\
+		\cline{2-2}
+	\end{tabularx}
+}
 
 \begin{document}
 \pagestyle{empty}
-\subsection*{ Lohko 1 }
+\subsection*{Lohko 1}
 \lohko
-\subsection*{ Lohko 2 }
+\subsection*{Lohko 2}
 \lohko
-\subsection*{ Lohko 3 }
+\subsection*{Lohko 3}
 \lohko
-\subsection*{ Lohko 4 }
+\subsection*{Lohko 4}
 \lohko
-\\
-\\
+\subsection*{Ylempi jatkosarja}
 \noindent
-\small
+\kaavioA{L1-1 / L1-1}
+       {L2-1 / L2-2}
+       {L3-1 / L1-2}
+       {L4-1 / L2-1}
+
+\subsection*{Alempi jatkosarja}
+\kaavioA{L1-2 / L1-3}
+       {L2-2 / L2-4}
+       {L3-2 / L1-4}
+       {L4-2 / L2-3}
+
+\scriptsize
+\begin{spacing}{1.0}
+\vspace{2mm}
+\noindent
 Jos kaksi tai useampi joukkuetta saa saman voittopistemäärän, määräytyy voittaja ja muut sijoitukset seuraavasti:
-\begin{enumerate}[noitemsep]
+\begin{enumerate}[noitemsep, nosep]
 	\item keskinäinen ottelu
 	\item keskinäisten ottelujen ({\bf kesk.}) voittopistemäärä
 	\item keskinäisten ottelujen ({\bf kesk.}) plus- ja miinuspisteet. Eniten plussia saanut sijoittuu paremmin.
 	\item kaikki lohkon sarjapelin pelipisteet ja jos nämäkin on tasan, ratkaistaan jatkoon menijä lyhyellä uusinnalla.
 \end{enumerate}
-\normalsize
-
-\subsection*{ Ylempi jatkosarja }
-\small
-Neljässä lohkossa pelattaessa jatkoon pääsee jokaisen lohkon voittaja. Kahdessa lohkossa pelattaessa jatkoon pääsee kummastakin lohkosta kaksi parhaiten sijoittunutta.
-\normalsize
-\vspace{5mm}
-
+\vspace{2mm}
 \noindent
-\kaavio{L1-1 / L1-1}
-       {L2-1 / L2-2}
-       {L3-1 / L1-2}
-       {L4-1 / L2-1}
+Neljässä lohkossa pelattaessa jatkoon pääsee jokaisen lohkon voittaja. Kahdessa lohkossa pelattaessa jatkoon pääsee kummastakin lohkosta kaksi parhaiten sijoittunutta. Kahdeksassa lohkossa pelattaessa jatkoon pääsee lohkojen voittajat.
+\end{spacing}
+\normalsize
 
-\subsection*{ Alempi jatkosarja }
-\kaavio{L1-2 / L1-3}
-       {L2-2 / L2-4}
-       {L3-2 / L1-4}
-       {L4-2 / L2-3}
 
+
+\subsection*{Lohko 5}
+\lohko
+\subsection*{Lohko 6}
+\lohko
+\subsection*{Lohko 7}
+\lohko
+\subsection*{Lohko 8}
+\lohko
+
+\subsection*{Jatkosarja kahdeksassa lohkossa pelattaessa}
+\kaavioB{L1-1}
+       {L2-1}
+       {L3-1}
+       {L4-1}
+       {L5-1}
+       {L6-1}
+       {L7-1}
+       {L8-1}
 
 \end{document}
