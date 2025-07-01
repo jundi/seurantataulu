@@ -33,6 +33,6 @@ jobs:
       with:
         tag_name: release-${{ env.DATE }}
         name: Release ${{ env.DATE }}
-        files: document.pdf
+        files: seurantataulu.pdf
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
