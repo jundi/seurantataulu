@@ -1,0 +1,25 @@
+name: Compile LaTeX Document
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up LaTeX environment
+      uses: dante-ev/latex-action@latest
+      with:
+        root_file: seurantataulu.tex
+
+    - name: Upload PDF artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: compiled-pdf
+        path: seurantataulu.pdf
